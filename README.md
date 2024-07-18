@@ -1,3 +1,4 @@
+![Application Entry Screen](./images/title.png)
 # TimeHorizon
 A Python CLI that tracks how much time your putting into a given subject. Provides a simple way to track your time, and to export your data to applications such as Excel to analyze your time spent. 
 
@@ -28,3 +29,5 @@ Then, when your session is finished, you will see how much time was spent.
 Repeat how many times you wish.
 
 At the end of the day, type in `endday` into the CLI. This will add all the times spent on each subject, and ask you to write down the things you've accomplished throughout the day (which you should post on Twitter!). You are able to write anything you want in this section, but here's my format for inspiration:
+
+![Example Formatting](./images/exampleformat.png)
