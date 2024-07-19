@@ -1,4 +1,4 @@
-import time, readline, os, pathlib, csv
+import time, readline, os, pathlib, csv, subprocess
 from datetime import date
 
 def timer(subject):
@@ -69,9 +69,14 @@ def writeToJournal(data):
         file.write(text)
         print("day succesfully ended!")
         
+def view():
+    file_to_show = "./journal"
+    subprocess.call(["open", "-R", file_to_show])
+    return
+        
 
 def menu():
-    commands = ["help", "start", "endday", "done"]
+    commands = ["help", "start", "endday", "done", "view"]
     print("""┌────────────────────────────────────────────────────────────────────────────┐
 │                                                                            │
 │                                                                            │
@@ -92,6 +97,7 @@ def menu():
             print(f"{commands[1]} - starts the timer. takes an additional string input, subject. ex: start programming \n ")
             print(f"{commands[2]} - ends the current day. a CLI will be shown to write down what you've accomplished. all time data done so far will then be exported as a .csv file which you can find in the project's directory. \n")
             print(f"{commands[3]} - exits the program. data will still be saved. \n")
+            print(f"{commands[4]} - opens up the folder window of TimeHorizon. allows for being able to quickly view past journals and csv files.")
             print("------------------------------------------------")
         elif (commands[1] == user_input.split(" ")[0] or commands[1][0] == user_input.split(" ")[0]):
             try:
@@ -122,6 +128,8 @@ def menu():
                 endday()
         elif (user_input == commands[3] or user_input == commands[3][0]):
             break
+        elif (user_input == commands[4] or user_input == commands[4][0]):
+            view()
         else:
             print("invalid command")
 
